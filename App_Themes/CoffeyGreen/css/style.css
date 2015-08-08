@@ -806,8 +806,8 @@ li {
 
 
 /* == Footer == */
-#footer{width:100%;text-align:center; height:87px;margin-bottom:20px; background:#37271d;}
-#footer-inner{ width:1024px; height:87px; margin:0 auto; background:#37271d;}
+#footer{width:100%;text-align:center; height:87px;margin-bottom:20px; background:#BE301A;}
+#footer-inner{ width:1024px; height:87px; margin:0 auto; background:#BE301A;}
 .footerTop{ width:824px; height:44px; float:left; padding-left:200px;}
 .footerTop ul{ width:100%; height:44px; }
 .footerTop ul li{ height:44px; float:left; list-style:none;}

@@ -37,7 +37,7 @@
             <div class="headerTop">
                 <!-- Begin: headerTop -->
                 <h1 class="logo">
-                    <a style="color: #fff;" href="Default.aspx">Chartered University College</a></h1>
+                    <a style="color: #fff;" href="Default.aspx"></a></h1>
                 <div class="headerRight">
                     <asp:LoginView ID="loginView" runat="server">
                         <LoggedInTemplate>
@@ -65,8 +65,8 @@
                 <h3>
                     Home Page</h3>
             </div>
-            <div class="inner-form" style="background-color: #37271D; overflow: hidden;">
-                <div class="mainNav" style="background-color: #37271D;">
+            <div class="inner-form" style="background-color: #DF5F5F; overflow: hidden;">
+                <div class="mainNav" style="background-color: #DF5F5F;">
                     <asp:Literal ID="litModules" runat="server"></asp:Literal>
                 </div>
                 <a href="javascript:showPanel();"><span style="color: White;">Change Password</span></a>
@@ -131,8 +131,8 @@
             </div>--%>
             <div class="footerBot">
                 <p>
-                    Copyright &copy;2011 <a href="http://www.mavrickit.com" target="_blank">Mavrick IT</a>
-                    &nbsp; Powered by: MavrickIT v 1.0</p>
+                    Copyright &copy;2011 <a href="http://www.malverninternational.edu.my" target="_blank">Premier Soft</a>
+                    &nbsp; <span style='display:none;'>Powered by: Premier Soft</a></p>
 
                     <asp:HiddenField ID="hfUserName" runat="server" />
                         <asp:HiddenField ID="hfPassword" runat="server" />
