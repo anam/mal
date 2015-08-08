@@ -75,7 +75,7 @@ h1.logo a {
 	text-decoration:none;
 	text-transform:capitalize;
 	color:#fff;
-	background:url(../../../Accounting/LOGO/cuc_mainLogo.png) no-repeat left top;
+	background:url(../../../Accounting/LOGO/malvernacademynewlogo.jpg) no-repeat left top;
 }
 
 .headerBot{
@@ -438,7 +438,7 @@ form, h3, dl, dt, dd, strong, label, small {
     margin: -1px -1px 0;
     padding: 7px 0 9px 20px;
     position: relative;
-	background:#72791f;
+	background:#BE301A;
 	top: 0px;
 	left: 0px;
 }
