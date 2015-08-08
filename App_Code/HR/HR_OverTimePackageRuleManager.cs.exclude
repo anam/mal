@@ -1,0 +1,105 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Configuration;
+using System.Linq;
+using System.Web.UI.WebControls;
+using System.Xml.Linq;
+
+public class HR_OverTimePackageRuleManager
+{
+	public HR_OverTimePackageRuleManager()
+	{
+	}
+
+    public static DataSet  GetAllHR_OverTimePackageRules()
+    {
+       DataSet hR_OverTimePackageRules = new DataSet();
+        SqlHR_OverTimePackageRuleProvider sqlHR_OverTimePackageRuleProvider = new SqlHR_OverTimePackageRuleProvider();
+        hR_OverTimePackageRules = sqlHR_OverTimePackageRuleProvider.GetAllHR_OverTimePackageRules();
+        return hR_OverTimePackageRules;
+    }
+
+	public static void hR_OverTimePackageRulesPaggination(System.Web.UI.WebControls.Repeater rptPager, int recordCount, int currentPage, int PageSize)
+		{
+		double dblPageCount = (double)((decimal)recordCount / decimal.Parse(PageSize.ToString()));
+		int pageCount = (int)Math.Ceiling(dblPageCount);
+		List<ListItem> pages = new List<ListItem>();
+		if (pageCount > 0)
+		{
+ 		pages.Add(new ListItem("First", "1", currentPage > 1));
+		for (int i = 1; i <= pageCount; i++)
+		{
+		 pages.Add(new ListItem(i.ToString(), i.ToString(), i != currentPage));
+		}
+		pages.Add(new ListItem("Last", pageCount.ToString(), currentPage < pageCount));
+		}
+		rptPager.DataSource = pages;
+		rptPager.DataBind();
+		}
+ 	public static void LoadHR_OverTimePackageRulePage(System.Web.UI.WebControls.GridView gv, System.Web.UI.WebControls.Repeater rptPager, int pageIndex, DropDownList ddlPageSize)
+	{
+		int recordCount=0;
+		int PageSize =  int.Parse(ddlPageSize.SelectedValue);
+		SqlHR_OverTimePackageRuleProvider sqlHR_OverTimePackageRuleProvider = new SqlHR_OverTimePackageRuleProvider();
+		DataSet ds =  sqlHR_OverTimePackageRuleProvider.GetHR_OverTimePackageRulePageWise(pageIndex, PageSize, out recordCount);
+		gv.DataSource = ds;
+		gv.DataBind();
+		 hR_OverTimePackageRulesPaggination(rptPager,recordCount, pageIndex, PageSize);
+	}
+    public static DataSet  GetDropDownListAllHR_OverTimePackageRule()
+    {
+       DataSet hR_OverTimePackageRules = new DataSet();
+        SqlHR_OverTimePackageRuleProvider sqlHR_OverTimePackageRuleProvider = new SqlHR_OverTimePackageRuleProvider();
+        hR_OverTimePackageRules = sqlHR_OverTimePackageRuleProvider.GetDropDownLisAllHR_OverTimePackageRule();
+        return hR_OverTimePackageRules;
+    }
+
+
+    public static HR_OverTimePackageRule GetHR_OverTimePackageSetUpByOverTimePackageSetUpID(int OverTimePackageSetUpID)
+    {
+        HR_OverTimePackageRule hR_OverTimePackageRule = new HR_OverTimePackageRule();
+        SqlHR_OverTimePackageRuleProvider sqlHR_OverTimePackageRuleProvider = new SqlHR_OverTimePackageRuleProvider();
+        hR_OverTimePackageRule = sqlHR_OverTimePackageRuleProvider.GetHR_OverTimePackageRuleByOverTimePackageSetUpID(OverTimePackageSetUpID);
+        return hR_OverTimePackageRule;
+    }
+
+
+    public static HR_OverTimePackageRule GetHR_OverTimeRuleSetUpByOverTimeRuleSetUpID(int OverTimeRuleSetUpID)
+    {
+        HR_OverTimePackageRule hR_OverTimePackageRule = new HR_OverTimePackageRule();
+        SqlHR_OverTimePackageRuleProvider sqlHR_OverTimePackageRuleProvider = new SqlHR_OverTimePackageRuleProvider();
+        hR_OverTimePackageRule = sqlHR_OverTimePackageRuleProvider.GetHR_OverTimePackageRuleByOverTimeRuleSetUpID(OverTimeRuleSetUpID);
+        return hR_OverTimePackageRule;
+    }
+
+
+    public static HR_OverTimePackageRule GetHR_OverTimePackageRuleByOverTimePackageRuleID(int OverTimePackageRuleID)
+    {
+        HR_OverTimePackageRule hR_OverTimePackageRule = new HR_OverTimePackageRule();
+        SqlHR_OverTimePackageRuleProvider sqlHR_OverTimePackageRuleProvider = new SqlHR_OverTimePackageRuleProvider();
+        hR_OverTimePackageRule = sqlHR_OverTimePackageRuleProvider.GetHR_OverTimePackageRuleByOverTimePackageRuleID(OverTimePackageRuleID);
+        return hR_OverTimePackageRule;
+    }
+
+
+    public static int InsertHR_OverTimePackageRule(HR_OverTimePackageRule hR_OverTimePackageRule)
+    {
+        SqlHR_OverTimePackageRuleProvider sqlHR_OverTimePackageRuleProvider = new SqlHR_OverTimePackageRuleProvider();
+        return sqlHR_OverTimePackageRuleProvider.InsertHR_OverTimePackageRule(hR_OverTimePackageRule);
+    }
+
+
+    public static bool UpdateHR_OverTimePackageRule(HR_OverTimePackageRule hR_OverTimePackageRule)
+    {
+        SqlHR_OverTimePackageRuleProvider sqlHR_OverTimePackageRuleProvider = new SqlHR_OverTimePackageRuleProvider();
+        return sqlHR_OverTimePackageRuleProvider.UpdateHR_OverTimePackageRule(hR_OverTimePackageRule);
+    }
+
+    public static bool DeleteHR_OverTimePackageRule(int hR_OverTimePackageRuleID)
+    {
+        SqlHR_OverTimePackageRuleProvider sqlHR_OverTimePackageRuleProvider = new SqlHR_OverTimePackageRuleProvider();
+        return sqlHR_OverTimePackageRuleProvider.DeleteHR_OverTimePackageRule(hR_OverTimePackageRuleID);
+    }
+}
+

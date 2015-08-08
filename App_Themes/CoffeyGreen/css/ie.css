@@ -1,0 +1,10 @@
+.button {
+background-color:#E3E3E3;
+}
+.button-ash {
+	background-color:#E3E3E3;
+}
+.button-ash:hover{
+	    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1d507d', endColorstr='#2d91c3')
+        progid:DXImageTransform.Microsoft.Shadow(color='#444444', Direction=180, Strength=3);
+		}

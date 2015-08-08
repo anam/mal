@@ -1,0 +1,628 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site2ColumnExternal.master.cs"
+    Inherits="Site2Column" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head id="Head1" runat="server">
+    <title></title>
+    <link rel="stylesheet" href="~/App_Themes/CoffeyGreen/css/reset.css" />
+    <link rel="stylesheet" href="~/App_Themes/CoffeyGreen/css/960_12_col.css" />
+    <link href="~/App_Themes/CoffeyGreen/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/CoffeyGreen/css/superfish.css"
+        media="screen" />
+    <script type="text/javascript" src="~/js/jquery.js"></script>
+    <script type="text/javascript" src="~/js/js.js"></script>
+    <script type="text/javascript" src="~/js/hoverIntent.js"></script>
+    <script type="text/javascript" src="~/js/superfish.js"></script>
+    <!--[if IE]>
+<link rel="stylesheet" type="text/css" href="../App_Themes/CoffeyGreen/css/ie1.css" />
+<![endif]-->
+    <script type="text/javascript">
+
+        // initialise plugins
+        jQuery(function () {
+            jQuery('ul.sf-menu').superfish();
+        });
+
+    </script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server" class="basic">
+    <asp:ScriptManager ID="sm" runat="server">
+    </asp:ScriptManager>
+    <div id="header">
+        <!-- Begin: header -->
+        <div id="headerWrapper">
+            <div class="headerTop">
+                <!-- Begin: headerTop -->
+                <h1 class="logo">
+                    <a style="color: #fff;" href="Default.aspx">Chartered University College</a></h1>
+                <%--<a href="#">company name</a></h1>--%>
+                <div class="headerRight">
+                    <div class="myaccount">
+                        <span class="accSymbol"></span>
+                        <input type="text" name="login" id="login" class="txtlogin" value="user name" />
+                        <a href="#" class="iconclick"></a>
+                    </div>
+                    <div class="post">
+                        <span class="postcount">132</span>
+                    </div>
+                </div>
+            </div>
+            <!-- End: headerTop -->
+            <div class="headerBot">
+                <!-- Begin: headerBot -->
+                <div class="headerNav">
+                    <div class="mainNav">
+                        <ul class="sf-menu">
+                            <li class="current"><a href="#"><span>Home</span></a></li>
+                            <li><a href="#"><span>HR</span></a>
+                                <ul>
+                                    <li><a href="#">Bank Account</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_BankAccount.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_BankAccount.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Benifit</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_Benefit.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_Benefit.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Blood Group</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_BloodGroup.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_BloodGroup.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Calender Holidays</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_CalenderHolidays.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_CalenderHolidays.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Contact Information</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_ContactInformation.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_ContactInformation.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Department</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_Department.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_Department.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Designation</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_Designation.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_Designation.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Educatinal Background</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_EducatinalBackground.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_EducatinalBackground.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Employee</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_Employee.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_Employee.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Employee Package</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_EmployeePackage.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_Employee.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Employee Rank</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_EmployeeRank.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_EmployeeRank.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Job Experience</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_JobExperience.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_JobExperience.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Job Location</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_JobLocation.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_JobLocation.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Job Responsibility</a>
+                                        <ul>
+                                            <li><a href="HR/AdminDisplayHR_JobResponsibility.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_JobResponsibility.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Leave Rule</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_LeaveRule.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_LeaveRule.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">LeavesRule Employee</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_LeavesRuleEmployee.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_LeavesRuleEmployee.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">LunchTime Rule</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_LunchTimeRule.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_LunchTimeRule.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Maritual Status</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_MaritualStatus.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_MaritualStatus.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Nationality</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_Nationality.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_Nationality.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">OverTime Rulels</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_OverTimeRulels.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_OverTimeRulels.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Personal Documents</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_PersonalDocuments.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_PersonalDocuments.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Posting Information</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_PostingInformation.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_PostingInformation.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Religion</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_Religion.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_Religion.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Retirement Rule</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_RetirementRule.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_RetirementRule.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">RetirementsRule Employee</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_RetirementsRuleEmployee.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_RetirementsRuleEmployee.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Salary Increment</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_SalaryIncrement.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_SalaryIncrement.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Salary Package</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_SalaryPackage.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_SalaryPackage.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Salary Stucture</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_SalaryStucture.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_SalaryStucture.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Shifting Working Days</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_ShiftingWorkingDays.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_ShiftingWorkingDays.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Tax</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_Tax.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_Tax.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Year</a>
+                                        <ul>
+                                            <li><a href="HR/AdminHR_Year.aspx">Add</a></li>
+                                            <li><a href="HR/AdminDisplayHR_Year.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><span>Library</span></a>
+                                <ul>
+                                    <li><a href="#">Author</a>
+                                        <ul>
+                                            <li><a href="Library/AdminLIB_Author.aspx">Add</a></li>
+                                            <li><a href="Library/AdminDisplayLIB_Author.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Book</a>
+                                        <ul>
+                                            <li><a href="Library/AdminLIB_Book.aspx">Add</a></li>
+                                            <li><a href="Library/AdminDisplayLIB_Book.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Book Issue</a>
+                                        <ul>
+                                            <li><a href="Library/AdminLIB_BookIssue.aspx">Add</a></li>
+                                            <li><a href="Library/AdminDisplayLIB_BookIssue.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Publisher</a>
+                                        <ul>
+                                            <li><a href="Library/AdminLIB_Publisher.aspx">Add</a></li>
+                                            <li><a href="Library/AdminDisplayLIB_Publisher.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><span>Student</span></a>
+                                <ul>
+                                    <li><a href="#">Board/University</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_BoardUniversity.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_BoardUniversity.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Campus</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_Campus.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_Campus.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Chapter</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_Chapter.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_Chapter.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">City</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_City.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_City.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Class</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_ClassDay.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_ClassDay.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Class Status</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_ClassStatus.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_ClassStatus.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Class Student</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_ClassStudent.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_ClassStudent.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Class Subject</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_ClassSubject.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_ClassSubject.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Class Subject Employee</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_ClassSubjectEmployee.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_ClassSubjectEmployee.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Class Time</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_ClassTime.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_ClassTime.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Class Type</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_ClassType.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_ClassType.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Comprehension</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_Comprehension.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_Comprehension.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Comprehension Question</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_ComprehensionQuestion.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_ComprehensionQuestion.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Contact</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_Contact.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_Contact.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Contact Type</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_ContactType.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_ContactType.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Country</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_Country.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_Country.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Course</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_Course.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_Course.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Education Group</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_EducationGroup.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_EducationGroup.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Exam</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_Exam.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_Exam.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Exam Student</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_ExamStudent.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_ExamStudent.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Exam Type</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_ExamType.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_ExamType.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Question</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_Question.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_Question.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Question Answer</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_QuestionAnswer.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_QuestionAnswer.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Question Chapter</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_QuestionChapter.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_QuestionChapter.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Question Type</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_QuestionType.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_QuestionType.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Reault System</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_ReaultSystem.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_ReaultSystem.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Room</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_Room.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_Room.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Routine</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_Routine.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_Routine.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Routine Time</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_RoutineTime.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_RoutineTime.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Student</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_Student.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_Student.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Student Contact</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_StudentContact.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_StudentContact.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                    <li><a href="#">Subject</a>
+                                        <ul>
+                                            <li><a href="Student/AdminSTD_Subject.aspx">Add</a></li>
+                                            <li><a href="Student/AdminDisplaySTD_Subject.aspx">Show</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a href="#"><span>Menu Item</span></a></li>
+                            <li><a href="#"><span>Sample Menu </span></a></li>
+                            <li><a href="#"><span>One More Menu</span></a></li>
+                            <li><a href="#"><span>Members</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- End: headerBot -->
+        </div>
+    </div>
+    <!-- End: header -->
+    <!--  Form Layout Start  -->
+    <div class="container_12">
+        <!--  Begin: container_12  -->
+        <div class="page">
+            <!--  Begin: page  -->
+            <div class="sideBar">
+                <!--  Begin: sideBar  -->
+                <div class="sideMain">
+                    <!--  Begin: sideMain  -->
+                    <div class="sideBox">
+                        <div class="sideBoxIn">
+                            <div class="sideBoxInner">
+                                <h3 class="sidebarHead">
+                                    Side Menu</h3>
+                                <div class="sideBarInner">
+                                    <ul>
+                                        <li><a href="#" class="trigger">Sample Menu</a>
+                                            <div class="toggle_container">
+                                                <ul class="innernav">
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="#" class="trigger">Sample Menu</a>
+                                            <div class="toggle_container">
+                                                <ul class="innernav">
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="#" class="trigger">Sample Menu</a>
+                                            <div class="toggle_container">
+                                                <ul class="innernav">
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="#" class="trigger">Sample Menu</a>
+                                            <div class="toggle_container">
+                                                <ul class="innernav">
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                        <li><a href="#" class="trigger">Sample Menu</a>
+                                            <div class="toggle_container">
+                                                <ul class="innernav">
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                    <li><a href="#">Inner Menu</a></li>
+                                                </ul>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="clearboth">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearboth">
+                    </div>
+                </div>
+                <!--  End: sideMain  -->
+            </div>
+            <!--  End: sideBar  -->
+            <div class="content">
+                <!--  Begin: content  -->
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!--  End: content  -->
+            <div class="clearboth">
+            </div>
+        </div>
+        <!--  End: page  -->
+        <!--  Form Layout Ended  -->
+        <!--  Form Layout Bergin  -->
+    </div>
+    <!--  End:container_12  -->
+    <!-- Start Footer -->
+    <div id="footer">
+        <div id="footer-inner">
+            <div class="footerTop">
+                 <ul>
+                    <li><a href="../Others/Default.aspx">Home</a></li>
+                    <li><a href="../Student/Default.aspx">Student</a></li>
+                    <li><a href="../HR/DefaultHR.aspx">HR</a></li>
+                    <li><a href="../Class/Default.aspx">Class</a></li>
+                    <li><a href="../Accounting/Default.aspx">Accounting</a></li>
+                    <li><a href="../Quiz/Default.aspx">Quiz System</a></li>
+                    <li><a href="../Library/Default.aspx">Library</a></li>
+                    <li><a href="../Inventory/Default.aspx">Inventory</a></li>
+                </ul>
+            </div>
+            <div class="footerBot">
+                <p>
+                   Copyright &copy;2011 <a href="http://www.mavrickit.com" target="_blank">Mavrick IT</a> &nbsp; Powered by: MavrickIT v 1.0</p>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer -->
+    <script type="text/javascript">
+        /* Main Menu */
+        $(function () {
+
+            $('.msg span').click(function () {
+                $(this).parent().fadeOut('slow');
+            });
+
+            $("ul#nav li").hover(function () {
+                $(this).addClass("hover");
+                $('ul:first', this).css('visibility', 'visible');
+            }, function () {
+                $(this).removeClass("hover");
+                $('ul:first', this).css('visibility', 'hidden');
+            });
+            $("ul#nav li:has(ul)").find("a:first").append("&nbsp;...");
+        });
+ 
+    </script>
+    </form>
+</body>
+</html>

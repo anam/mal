@@ -1,0 +1,198 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site2ColumnExam.master.cs" Inherits="Site2ColumnExam" %>
+<%@ Register src="Control/WebUserControl.ascx" tagname="WebUserControl" tagprefix="uc1" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link rel="stylesheet" href="~/App_Themes/CoffeyGreen/css/reset.css" />
+    <link rel="stylesheet" href="~/App_Themes/CoffeyGreen/css/960_12_col.css" />
+    <link href="~/App_Themes/CoffeyGreen/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/CoffeyGreen/css/superfish.css"
+        media="screen" />
+    <link rel="Stylesheet" type="text/css" href="App_Themes/CoffeyGreen/css/grid.css" />
+    <script type="text/javascript" src="../js/jquery.js">  </script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/js.js"></script>
+    <script type="text/javascript" src="../js/hoverIntent.js"></script>
+    <script type="text/javascript" src="../js/superfish.js"></script>
+    <!--[if IE]>
+<link rel="stylesheet" type="text/css" href="../App_Themes/CoffeyGreen/css/ie1.css" />
+<![endif]-->
+    <link href="App_Themes/CoffeyGreen/css/cssUpdateProgress.css" rel="stylesheet" type="text/css" />
+
+    <script type="text/javascript">
+
+        // initialise plugins
+        jQuery(function () {
+            jQuery('ul.sf-menu').superfish();
+        });
+
+    </script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server" class="basic">
+    <script src="../js/jsUpdateProgress.js" type="text/javascript"></script>
+    <asp:ScriptManager ID="sm1" runat="server">
+    </asp:ScriptManager>
+    <div id="header">
+        <!-- Begin: header -->
+        <div id="headerWrapper">
+            <div class="headerTop">
+                <!-- Begin: headerTop -->
+                <h1 class="logo">
+                    <a style="color: #fff;" href="Default.aspx">Chartered University College</a></h1>
+                <%--<a href="#">company name</a></h1>--%>
+                <div class="headerRight">
+                    <div class="myaccount">
+                        <span class="accSymbol"></span>
+                        <input type="text" name="login" id="login" class="txtlogin" value="user name" />
+                        <a href="#" class="iconclick"></a>
+                    </div>
+                    <div class="post">
+                        <span class="postcount">132</span>
+                    </div>
+                </div>
+            </div>
+            <!-- End: headerTop -->
+            <div class="headerBot">
+                <!-- Begin: headerBot -->
+                <div class="headerNav">
+                    <div class="mainNav">
+                        <uc1:WebUserControl ID="WebUserControl1" runat="server" />
+                    </div>
+                </div>
+            </div>
+            <!-- End: headerBot -->
+        </div>
+    </div>
+    <!-- End: header -->
+    <!--  Form Layout Start  -->
+    <div class="container_12">
+        <!--  Begin: container_12  -->
+        <div class="page">
+            <!--  Begin: page  -->
+            <div class="sideBar">
+                <!--  Begin: sideBar  -->
+                <div class="sideMain">
+                    <!--  Begin: sideMain  -->
+                    <div class="sideBox">
+                        <div class="sideBoxIn">
+                            <div class="sideBoxInner">
+                                <h3 class="sidebarHead">
+                                    Side Menu</h3>
+                                <div class="sideBarInner">
+                                    <ul>
+                                        <li><a href="#" class="trigger">Exam</a>
+                                            <%--<div class="toggle_container">
+                                                <ul class="innernav">
+                                                    <li><a href="#">Student Registration</a></li>
+                                                    <li><a href="#">Employee Joining</a></li>
+                                                    <li><a href="#">Accounts Income Transaction</a></li>
+                                                    <li><a href="#">Accounts Expence Transaction</a></li>
+                                                    <li><a href="#">Exam Results</a></li>
+                                                    <li><a href="#">Attendence</a></li>
+                                                    <li><a href="#">Routine</a></li>
+                                                </ul>
+                                            </div>--%>
+                                        </li>
+                                        <li><a href="#" class="trigger">Exam Setting</a>
+                                            <%--<div class="toggle_container">
+                                                <ul class="innernav">
+                                                    <li><a href="../Student/StudentRegistration.aspx">Student Registration</a></li>
+                                                    <li><a href="../Student/AdminDisplaySTD_Student.aspx">Student Search</a></li>
+                                                    <li><a href="../Class/StudentClassSubjectAdd.aspx">Student Assigning Class</a></li>
+                                                </ul>
+                                            </div>--%>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                                <div class="clearboth">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearboth">
+                    </div>
+                </div>
+                <!--  End: sideMain  -->
+            </div>
+            <!--  End: sideBar  -->
+            <div class="content">
+                <!--  Begin: content  -->
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!--  End: content  -->
+            <div class="clearboth">
+            </div>
+        </div>
+        <!--  End: page  -->
+        <!--  Form Layout Ended  -->
+        <!--  Form Layout Bergin  -->
+    </div>
+    <!--  End:container_12  -->
+    <!-- Start Footer -->
+    <div id="footer">
+        <div id="footer-inner">
+            <div class="footerTop">
+                 <ul>
+                    <li><a href="../Others/Default.aspx">Home</a></li>
+                    <li><a href="../Student/Default.aspx">Student</a></li>
+                    <li><a href="../HR/DefaultHR.aspx">HR</a></li>
+                    <li><a href="../Class/Default.aspx">Class</a></li>
+                    <li><a href="../Accounting/Default.aspx">Accounting</a></li>
+                    <li><a href="../Quiz/Default.aspx">Quiz System</a></li>
+                    <li><a href="../Library/Default.aspx">Library</a></li>
+                    <li><a href="../Inventory/Default.aspx">Inventory</a></li>
+                </ul>
+            </div>
+            <div class="footerBot">
+                <p>
+                    Copyright &copy;2011 <a href="http://www.mavrickit.com" target="_blank">Mavrick IT</a> &nbsp; Powered by: MavrickIT v 1.0</p>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer -->
+    <script type="text/javascript">
+        /* Main Menu */
+        $(function () {
+
+            $('.msg span').click(function () {
+                $(this).parent().fadeOut('slow');
+            });
+
+            $("ul#nav li").hover(function () {
+                $(this).addClass("hover");
+                $('ul:first', this).css('visibility', 'visible');
+            }, function () {
+                $(this).removeClass("hover");
+                $('ul:first', this).css('visibility', 'hidden');
+            });
+            $("ul#nav li:has(ul)").find("a:first").append("&nbsp;...");
+        });
+ 
+    </script>
+
+
+    <asp:Panel ID="panelUpdateProgress" runat="server" CssClass="updateProgress1">
+        <asp:UpdateProgress ID="UpdateProg1" DisplayAfter="0" runat="server">
+            <ProgressTemplate>
+                <div style="position: relative; top: 30%; text-align: center; width: 150px; height: 150px;">
+                    <img src="../App_Themes/CoffeyGreen/images/loading.gif" style="vertical-align: middle" alt="Processing"
+                        width="100px" height="100px" />
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+    </asp:Panel>
+    <script type="text/javascript" language="javascript">
+        var ModalProgress = '<%=ModalProgress.ClientID %>';         
+    </script>
+    <ajaxToolkit:ModalPopupExtender ID="ModalProgress" runat="server" TargetControlID="panelUpdateProgress"
+        BackgroundCssClass="modalBackground" PopupControlID="panelUpdateProgress" />
+    </form>
+</body>
+</html>

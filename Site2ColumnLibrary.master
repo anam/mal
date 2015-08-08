@@ -1,0 +1,248 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="Site2ColumnLibrary.master.cs"
+    Inherits="Site2ColumnLibrary" %>
+
+<%--<%@ Register Src="Control/WebUserControl.ascx" TagName="WebUserControl" TagPrefix="uc1" %>--%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title></title>
+    <link rel="stylesheet" href="~/App_Themes/CoffeyGreen/css/reset.css" />
+    <link rel="stylesheet" href="~/App_Themes/CoffeyGreen/css/960_12_col.css" />
+    <link href="~/App_Themes/CoffeyGreen/css/style.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="~/App_Themes/CoffeyGreen/css/superfish.css"
+        media="screen" />
+    <link rel="Stylesheet" type="text/css" href="App_Themes/CoffeyGreen/css/grid.css" />
+    <script type="text/javascript" src="../js/jquery.js">  </script>
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/js.js"></script>
+    <script type="text/javascript" src="../js/hoverIntent.js"></script>
+    <script type="text/javascript" src="../js/superfish.js"></script>
+    <!--[if IE]>
+<link rel="stylesheet" type="text/css" href="../App_Themes/CoffeyGreen/css/ie1.css" />
+<![endif]-->
+    <link href="App_Themes/CoffeyGreen/css/cssUpdateProgress.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+
+        // initialise plugins
+        jQuery(function () {
+            jQuery('ul.sf-menu').superfish();
+        });
+
+    </script>
+    <asp:ContentPlaceHolder ID="HeadContent" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="Form1" runat="server" class="basic">
+    <script src="../js/jsUpdateProgress.js" type="text/javascript"></script>
+    <asp:ScriptManager ID="sm1" runat="server">
+    </asp:ScriptManager>
+    <div id="header">
+        <!-- Begin: header -->
+        <div id="headerWrapper">
+            <div class="headerTop">
+                <!-- Begin: headerTop -->
+                <h1 class="logo">
+                    <a style="color: #fff;" href="Default.aspx">Chartered University College</a></h1>
+                <%--<a href="#">company name</a></h1>--%>
+                <div class="headerRight">
+                    <div class="myaccount">
+                        <span class="accSymbol"></span>
+                        <input type="text" name="login" id="login" class="txtlogin" value="user name" />
+                        <a href="#" class="iconclick"></a>
+                    </div>
+                    <div class="post">
+                        <span class="postcount">132</span>
+                    </div>
+                </div>
+            </div>
+            <!-- End: headerTop -->
+            <div class="headerBot">
+                <!-- Begin: headerBot -->
+                <div class="headerNav">
+                    <div class="mainNav">
+                        <ul class="sf-menu">
+                            <li><a href="../Others/Default.aspx"><span>Home</span></a></li>
+                            <li><a href="../Student/Default.aspx"><span>Student</span></a> </li>
+                            <li><a href="../HR/DefaultHR.aspx"><span>HR</span></a> </li>
+                            <li><a href="../Class/Default.aspx"><span>Class</span></a></li>
+                            <li><a href="../Accounting/Default.aspx"><span>Accounting</span></a> </li>
+                            <li><a href="../Quiz/Default.aspx"><span>Quiz System</span></a></li>
+                            <li class="current"><a href="../Library/Default.aspx"><span>Library</span></a> </li>
+                            <li><a href="../Inventory/Default.aspx"><span>Inventory</span></a> </li>
+                        </ul>
+                        <%--<uc1:WebUserControl ID="WebUserControl1" runat="server" />--%>
+                    </div>
+                </div>
+            </div>
+            <!-- End: headerBot -->
+        </div>
+    </div>
+    <!-- End: header -->
+    <!--  Form Layout Start  -->
+    <div class="container_12">
+        <!--  Begin: container_12  -->
+        <div class="page">
+            <!--  Begin: page  -->
+            <div class="sideBar">
+                <!--  Begin: sideBar  -->
+                <div class="sideMain">
+                    <!--  Begin: sideMain  -->
+                    <div class="sideBox">
+                        <div class="sideBoxIn">
+                            <div class="sideBoxInner">
+                                <h3 class="sidebarHead">
+                                    Library</h3>
+                                <div class="sideBarInner">
+                                    <ul>
+                                        <li style="background: #e5e5e5;">
+                                            <ul class="innernav">
+                                                <li style="background: #e5e5e5;"><a href="../Library/LibrarySettingsPage.aspx">Library
+                                                    Settings</a> </li>
+                                                <li style="background: #e5e5e5;"><a href="#">Book</a>
+                                                    <ul>
+                                                        <li style="background: #e5e5e5;"><a href="../Library/AdminLIB_Book.aspx">Add</a></li>
+                                                        <li style="background: #e5e5e5;"><a href="../Library/AdminDisplayLIB_Book.aspx">Show</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li style="background: #e5e5e5;"><a href="#">Book Issue</a>
+                                                    <ul>
+                                                        <li style="background: #e5e5e5;"><a href="../Library/AdminLIB_BookIssue.aspx">Issue</a></li>
+                                                        <%--<li style="background: #e5e5e5;"><a href="../Library/AdminLIB_BookReceive.aspx">Receive</a></li>--%>
+                                                        <li style="background: #e5e5e5;"><a href="../Library/AdminDisplayLIB_BookIssue.aspx">
+                                                            Show Issue Book</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li style="background: #e5e5e5;"><a href="#">Search</a>
+                                                    <ul>
+                                                        <li style="background: #e5e5e5;"><a href="../Library/SearchLIB_Book.aspx">Search Book</a></li>
+                                                        <%--<li style="background: #e5e5e5;"><a href="../Library/SearchLIB_IssueBook.aspx">Search
+                                                            Issue Book</a></li>--%>
+                                                        <li style="background: #e5e5e5;"><a href="../Library/SearchLIB_Cate_SubCateBook.aspx">
+                                                            Category Sub-Category</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li style="background: #e5e5e5;"><a href="#">Report</a>
+                                                    <ul>
+                                                        <li style="background: #e5e5e5;"><a href="../Library/AuthorWiseRpt.aspx">Author Wise
+                                                            Report</a></li>
+                                                        <li style="background: #e5e5e5;"><a href="../Library/DateWiseIssueRpt.aspx">Date Wise
+                                                            Report</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li style="background: #e5e5e5;"><a href="../Library/BarCode.aspx">Barcode</a> </li>
+                                            </ul>
+                                        </li>
+                                        <%--<li><a href="" class="trigger">Library Settings</a>
+                                            <div class="toggle_container">
+                                                <ul class="innernav">
+                                                    <li><a href="#">Author</a>
+                                                        <ul>
+                                                            <li><a href="../Library/AdminLIB_Author.aspx">Add</a></li>
+                                                            <li><a href="../Library/AdminDisplayLIB_Author.aspx">Show</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">Publisher</a>
+                                                        <ul>
+                                                            <li><a href="../Library/AdminLIB_Publisher.aspx">Add</a></li>
+                                                            <li><a href="../Library/AdminDisplayLIB_Publisher.aspx">Show</a></li>
+                                                        </ul>
+                                                    </li>
+                                                    <li><a href="#">Category Sub Category</a>
+                                                        <ul>
+                                                            <li><a href="../Library/AdminLIB_Category.aspx">Insert Category</a></li>
+                                                            <li><a href="../Library/AdminLIB_SubCategory.aspx">Insert Sub-Category</a></li>
+                                                            <li><a href="../Library/AdminDisplayLIB_Category.aspx">Display Category</a></li>
+                                                            <li><a href="../Library/AdminDisplayLIB_SubCategory.aspx">Display Sub-Category</a></li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </li>--%>
+                                    </ul>
+                                </div>
+                                <div class="clearboth">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="clearboth">
+                    </div>
+                </div>
+                <!--  End: sideMain  -->
+            </div>
+            <!--  End: sideBar  -->
+            <div class="content">
+                <!--  Begin: content  -->
+                <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <!--  End: content  -->
+            <div class="clearboth">
+            </div>
+        </div>
+        <!--  End: page  -->
+        <!--  Form Layout Ended  -->
+        <!--  Form Layout Bergin  -->
+    </div>
+    <!--  End:container_12  -->
+    <!-- Start Footer -->
+    <div id="footer">
+        <div id="footer-inner">
+            <div class="footerTop">
+                <ul>
+                    <li><a href="../Others/Default.aspx">Home</a></li>
+                    <li><a href="../Student/Default.aspx">Student</a></li>
+                    <li><a href="../HR/DefaultHR.aspx">HR</a></li>
+                    <li><a href="../Class/Default.aspx">Class</a></li>
+                    <li><a href="../Accounting/Default.aspx">Accounting</a></li>
+                    <li><a href="../Quiz/Default.aspx">Quiz System</a></li>
+                    <li><a href="../Library/Default.aspx">Library</a></li>
+                    <li><a href="../Inventory/Default.aspx">Inventory</a></li>
+                </ul>
+            </div>
+            <div class="footerBot">
+                <p>
+                    Copyright &copy;2011 <a href="http://www.mavrickit.com" target="_blank">Mavrick IT</a>
+                    &nbsp; Powered by: MavrickIT v 1.0</p>
+            </div>
+        </div>
+    </div>
+    <!-- End Footer -->
+    <script type="text/javascript">
+        /* Main Menu */
+        $(function () {
+
+            $('.msg span').click(function () {
+                $(this).parent().fadeOut('slow');
+            });
+
+            $("ul#nav li").hover(function () {
+                $(this).addClass("hover");
+                $('ul:first', this).css('visibility', 'visible');
+            }, function () {
+                $(this).removeClass("hover");
+                $('ul:first', this).css('visibility', 'hidden');
+            });
+            $("ul#nav li:has(ul)").find("a:first").append("&nbsp;...");
+        });
+ 
+    </script>
+    <asp:Panel ID="panelUpdateProgress" runat="server" CssClass="updateProgress1">
+        <asp:UpdateProgress ID="UpdateProg1" DisplayAfter="0" runat="server">
+            <ProgressTemplate>
+                <div style="position: relative; top: 30%; text-align: center; width: 150px; height: 150px;">
+                    <img src="../App_Themes/CoffeyGreen/images/loading.gif" style="vertical-align: middle"
+                        alt="Processing" width="100px" height="100px" />
+                </div>
+            </ProgressTemplate>
+        </asp:UpdateProgress>
+    </asp:Panel>
+    <script type="text/javascript" language="javascript">
+        var ModalProgress = '<%=ModalProgress.ClientID %>';         
+    </script>
+    <ajaxToolkit:ModalPopupExtender ID="ModalProgress" runat="server" TargetControlID="panelUpdateProgress"
+        BackgroundCssClass="modalBackground" PopupControlID="panelUpdateProgress" />
+    </form>
+</body>
+</html>

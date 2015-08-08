@@ -1,0 +1,117 @@
+<%@ Page Language="C#" AutoEventWireup="true"   MasterPageFile="~/Site2Column.master"  CodeFile="AdminHR_OverTimePackageSetUp.aspx.cs" Inherits="AdminHR_OverTimePackageSetUp" Title="HR_OverTimePackageSetUp Insert/Update By Admin" %>
+ <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
+ 
+ </asp:Content>
+ <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
+<div class="content-box">
+<div class="header">
+<h3>Overtime  Package SetUp</h3>
+</div>
+<div class="inner-form">
+<!-- error and information messages -->
+  	<dl>
+    <dt>
+     <asp:Label ID="lblOverTimePackageSetUpName" runat="server" Text="Package Name: "> </asp:Label>
+     </dt>
+    <dd>
+     <asp:TextBox ID="txtOverTimePackageSetUpName" class="txt large-input" runat="server" Text=""> </asp:TextBox>
+     </dd>
+   
+
+ </dl></div>
+ </div>
+ <div class="content-box">
+<div class="header">
+<h3>Rule SetUp</h3>
+</div>
+<div class="inner-form">
+
+    <table  width="100%">
+        <tr>
+            <td>
+     <asp:Label ID="lblOverTimeRuleSetUpName" runat="server" Text="Rule  Name:"> </asp:Label>
+            </td>
+            <td>
+     <asp:TextBox ID="txtOverTimeRuleSetUpName" class="txt large-input" runat="server" Text=""> </asp:TextBox>
+            </td>
+            <td>
+     <asp:Label ID="lblOverTimeRuleValue" runat="server" Text="Rule Value: "> </asp:Label>
+            </td>
+            <td>
+     <asp:TextBox ID="txtOverTimeRuleValue" class="txt large-input" runat="server" Text=""> </asp:TextBox>
+            </td>
+            <td>
+     <asp:Label ID="lblOverTimeRuleOperator" runat="server" Text="Formula : "> </asp:Label>
+            </td>
+            <td>
+ 
+       <asp:DropDownList ID="ddlOverTimeRuleOperator" runat="server">
+                        <asp:ListItem Value="/">/</asp:ListItem>
+                        <asp:ListItem Value="*">*</asp:ListItem>
+                        <asp:ListItem Value="-">-</asp:ListItem>
+                        <asp:ListItem Value="+">+</asp:ListItem>
+                         <asp:ListItem Value="=">=</asp:ListItem>
+                    </asp:DropDownList>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+                &nbsp;</td>
+            <td>
+<asp:Button ID="Button1" class="button button-blue" runat="server" Text="More Rules" OnClick="btnAddMoreRules_Click" />
+            </td>
+        </tr>
+        <tr>
+        <td colspan="6">
+        	<asp:GridView ID="gvHR_OverTimePackageSetUp" class="gridCss" runat="server" AutoGenerateColumns="false" CssClass="gridCss" Width="500">
+	 	 	<Columns>
+
+<asp:TemplateField HeaderText="Rule Name">
+ 	 <ItemTemplate>
+      <asp:Label ID="lblRuleSerial" Visible="false" runat="server" Text='<%#Eval("OverTimeRuleSetUpID") %>'>
+ 	 </asp:Label>
+ 	 <asp:Label ID="OverTimeRuleSetUpName" runat="server" Text='<%#Eval("OverTimeRuleSetUpName") %>'>
+ 	 </asp:Label>
+  		</ItemTemplate>
+ 	</asp:TemplateField>
+<asp:TemplateField HeaderText="Rule Value">
+ 	 <ItemTemplate>
+ 	 <asp:Label ID="lblRuleValue" runat="server" Text='<%#Eval("OverTimeRuleValue") %>'>
+ 	 </asp:Label>
+  		</ItemTemplate>
+ 	</asp:TemplateField>
+    <asp:TemplateField HeaderText="Rule Formula">
+ 	 <ItemTemplate>
+ 	 <asp:Label ID="lblRuleFormula" runat="server" Text='<%#Eval("OverTimeRuleOperator") %>'>
+ 	 </asp:Label>
+  		</ItemTemplate>
+ 	</asp:TemplateField>
+<asp:TemplateField HeaderText="Delete">
+ 	 <ItemTemplate>
+  
+ 	 <asp:ImageButton runat="server" ID="lbDelete"  CommandArgument="<%# ((GridViewRow) Container).RowIndex %>" OnClick="lbDelete_Click"  AlternateText="Delete" ImageUrl="~/App_Themes/CoffeyGreen/images/icon-delete.png"
+ 	  />
+  		</ItemTemplate>
+ 	</asp:TemplateField>
+	 	 	</Columns>
+	 	 </asp:GridView>
+        </td>
+        </tr>
+    </table>
+
+<!-- error and information messages -->
+
+ <asp:Button ID="btnSave" class="button button-blue" runat="server" Text="Save Rules" OnClick="btnSave_Click" />
+            
+ </div>
+ </div>
+ </asp:Content>
+

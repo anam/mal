@@ -1,0 +1,7 @@
+Changes Store Procedure:
+
+		1. GetSTD_ClassPageWise
+		2. GetSTD_CampusPageWise
+		3. GetSTD_ClassPageWiseByClass
+		
+		5. GetSTD_SubjectPageWise

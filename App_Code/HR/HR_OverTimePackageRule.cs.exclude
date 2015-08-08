@@ -1,0 +1,47 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Linq;
+
+public class HR_OverTimePackageRule
+{
+    public HR_OverTimePackageRule()
+    {
+    }
+
+
+    public HR_OverTimePackageRule
+        (
+int  overTimePackageRuleID,
+int  overTimePackageSetUpID,
+int  overTimeRuleSetUpID
+
+        )
+
+    {
+this.OverTimePackageRuleID = overTimePackageRuleID;
+this.OverTimePackageSetUpID = overTimePackageSetUpID;
+this.OverTimeRuleSetUpID = overTimeRuleSetUpID;
+
+    }
+
+    public int  OverTimePackageRuleID
+    {
+        get ; 
+        set  ;
+    }
+
+    public int  OverTimePackageSetUpID
+    {
+        get ; 
+        set  ;
+    }
+
+    public int  OverTimeRuleSetUpID
+    {
+        get ; 
+        set  ;
+    }
+
+}
+

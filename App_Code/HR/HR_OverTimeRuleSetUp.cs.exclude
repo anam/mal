@@ -1,0 +1,55 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Linq;
+
+public class HR_OverTimeRuleSetUp
+{
+    public HR_OverTimeRuleSetUp()
+    {
+    }
+
+
+    public HR_OverTimeRuleSetUp
+        (
+int  overTimeRuleSetUpID,
+string  overTimeRuleSetUpName,
+int  overTimeRuleValue,
+string  overTimeRuleOperator
+
+        )
+
+    {
+this.OverTimeRuleSetUpID = overTimeRuleSetUpID;
+this.OverTimeRuleSetUpName = overTimeRuleSetUpName;
+this.OverTimeRuleValue = overTimeRuleValue;
+this.OverTimeRuleOperator = overTimeRuleOperator;
+
+    }
+
+    public int  OverTimeRuleSetUpID
+    {
+        get ; 
+        set  ;
+    }
+
+    public string  OverTimeRuleSetUpName
+    {
+        get ; 
+        set  ;
+    }
+
+    public int  OverTimeRuleValue
+    {
+        get ; 
+        set  ;
+    }
+
+    public string  OverTimeRuleOperator
+    {
+        get ; 
+        set  ;
+    }
+
+}
+

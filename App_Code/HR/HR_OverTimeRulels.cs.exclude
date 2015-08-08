@@ -1,0 +1,87 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Linq;
+
+public class HR_OverTimeRulels
+{
+    public HR_OverTimeRulels()
+    {
+    }
+
+
+    public HR_OverTimeRulels
+        (
+int  overTimeRulesID,
+string  overTimeRulesName,
+string  addedBy,
+DateTime  addedDate,
+string  modifiedBy,
+DateTime  modifiedDate,
+decimal  perhour,
+string  overtimeRule
+
+        )
+
+    {
+this.OverTimeRulesID = overTimeRulesID;
+this.OverTimeRulesName = overTimeRulesName;
+this.AddedBy = addedBy;
+this.AddedDate = addedDate;
+this.ModifiedBy = modifiedBy;
+this.ModifiedDate = modifiedDate;
+this.Perhour = perhour;
+this.OvertimeRule = overtimeRule;
+
+    }
+
+    public int  OverTimeRulesID
+    {
+        get ; 
+        set  ;
+    }
+
+    public string  OverTimeRulesName
+    {
+        get ; 
+        set  ;
+    }
+
+    public string  AddedBy
+    {
+        get ; 
+        set  ;
+    }
+
+    public DateTime  AddedDate
+    {
+        get ; 
+        set  ;
+    }
+
+    public string  ModifiedBy
+    {
+        get ; 
+        set  ;
+    }
+
+    public DateTime  ModifiedDate
+    {
+        get ; 
+        set  ;
+    }
+
+    public decimal  Perhour
+    {
+        get ; 
+        set  ;
+    }
+
+    public string  OvertimeRule
+    {
+        get ; 
+        set  ;
+    }
+
+}
+

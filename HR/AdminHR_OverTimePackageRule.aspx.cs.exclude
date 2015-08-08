@@ -1,0 +1,88 @@
+using System;
+using System.Collections;
+using System.Collections.Generic;
+using System.Configuration;
+using System.Data;
+using System.Linq;
+using System.Web;
+using System.Web.Security;
+using System.Web.UI;
+using System.Web.UI.HtmlControls;
+using System.Web.UI.WebControls;
+using System.Web.UI.WebControls.WebParts;
+using System.Xml.Linq;
+ public partial class AdminHR_OverTimePackageRule : System.Web.UI.Page
+{
+    protected void Page_Load(object sender, EventArgs e)
+    {
+        if (!IsPostBack)
+    {
+ //           loadHR_OverTimePackageRuleData();
+         		OverTimePackageSetUpIDLoad();
+		OverTimeRuleSetUpIDLoad();
+
+            if (Request.QueryString["ID"] != null)
+            {
+                int ID = Int32.Parse(Request.QueryString["ID"]);
+                    btnAdd.Visible = false;
+                    btnUpdate.Visible = true;
+                    showHR_OverTimePackageRuleData();
+                }
+        }
+    }
+	protected void btnAdd_Click(object sender, EventArgs e)
+		{
+	HR_OverTimePackageRule hR_OverTimePackageRule = new HR_OverTimePackageRule ();
+//	hR_OverTimePackageRule.OverTimePackageRuleID=  int.Parse(ddlOverTimePackageRuleID.SelectedValue);
+	hR_OverTimePackageRule.OverTimePackageSetUpID=  int.Parse(ddlOverTimePackageSetUpID.SelectedValue);
+	hR_OverTimePackageRule.OverTimeRuleSetUpID=  int.Parse(ddlOverTimeRuleSetUpID.SelectedValue);
+	int resutl =HR_OverTimePackageRuleManager.InsertHR_OverTimePackageRule(hR_OverTimePackageRule);
+	Response.Redirect("AdminDisplayHR_OverTimePackageRule.aspx");
+	}
+	protected void btnUpdate_Click(object sender, EventArgs e)
+		{
+	HR_OverTimePackageRule hR_OverTimePackageRule = new HR_OverTimePackageRule ();
+	hR_OverTimePackageRule.OverTimePackageRuleID=  int.Parse(Request.QueryString["ID"].ToString());
+	hR_OverTimePackageRule.OverTimePackageSetUpID=  int.Parse(ddlOverTimePackageSetUpID.SelectedValue);
+	hR_OverTimePackageRule.OverTimeRuleSetUpID=  int.Parse(ddlOverTimeRuleSetUpID.SelectedValue);
+	bool  resutl =HR_OverTimePackageRuleManager.UpdateHR_OverTimePackageRule(hR_OverTimePackageRule);
+	Response.Redirect("AdminDisplayHR_OverTimePackageRule.aspx");
+	}
+	private void showHR_OverTimePackageRuleData()
+	{
+	 	HR_OverTimePackageRule hR_OverTimePackageRule  = new HR_OverTimePackageRule ();
+	 	hR_OverTimePackageRule = HR_OverTimePackageRuleManager.GetHR_OverTimePackageRuleByOverTimePackageRuleID(Int32.Parse(Request.QueryString["ID"]));
+	 	ddlOverTimePackageSetUpID.SelectedValue  =hR_OverTimePackageRule.OverTimePackageSetUpID.ToString();
+	 	ddlOverTimeRuleSetUpID.SelectedValue  =hR_OverTimePackageRule.OverTimeRuleSetUpID.ToString();
+	}
+	
+	private void OverTimePackageSetUpIDLoad()
+	{
+		try {
+		DataSet ds = HR_OverTimePackageSetUpManager.GetDropDownListAllHR_OverTimePackageSetUp();
+		ddlOverTimePackageSetUpID.DataValueField = "OverTimePackageSetUpID";
+		ddlOverTimePackageSetUpID.DataTextField = "OverTimePackageSetUpName";
+		ddlOverTimePackageSetUpID.DataSource = ds.Tables[0];
+		ddlOverTimePackageSetUpID.DataBind();
+		ddlOverTimePackageSetUpID.Items.Insert(0, new ListItem("Select OverTimePackageSetUp >>", "0"));
+		}
+		catch (Exception ex) {
+		ex.Message.ToString();
+		}
+	 }
+	private void OverTimeRuleSetUpIDLoad()
+	{
+		try {
+		DataSet ds = HR_OverTimeRuleSetUpManager.GetDropDownListAllHR_OverTimeRuleSetUp();
+		ddlOverTimeRuleSetUpID.DataValueField = "OverTimeRuleSetUpID";
+		ddlOverTimeRuleSetUpID.DataTextField = "OverTimeRuleSetUpName";
+		ddlOverTimeRuleSetUpID.DataSource = ds.Tables[0];
+		ddlOverTimeRuleSetUpID.DataBind();
+		ddlOverTimeRuleSetUpID.Items.Insert(0, new ListItem("Select OverTimeRuleSetUp >>", "0"));
+		}
+		catch (Exception ex) {
+		ex.Message.ToString();
+		}
+	 }
+}
+

@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Configuration;
+using System.Linq;
+using System.Web.UI.WebControls;
+using System.Xml.Linq;
+
+public class HR_OverTimeRuleSetUpManager
+{
+	public HR_OverTimeRuleSetUpManager()
+	{
+	}
+
+    public static DataSet  GetAllHR_OverTimeRuleSetUps()
+    {
+       DataSet hR_OverTimeRuleSetUps = new DataSet();
+        SqlHR_OverTimeRuleSetUpProvider sqlHR_OverTimeRuleSetUpProvider = new SqlHR_OverTimeRuleSetUpProvider();
+        hR_OverTimeRuleSetUps = sqlHR_OverTimeRuleSetUpProvider.GetAllHR_OverTimeRuleSetUps();
+        return hR_OverTimeRuleSetUps;
+    }
+
+	public static void hR_OverTimeRuleSetUpsPaggination(System.Web.UI.WebControls.Repeater rptPager, int recordCount, int currentPage, int PageSize)
+		{
+		double dblPageCount = (double)((decimal)recordCount / decimal.Parse(PageSize.ToString()));
+		int pageCount = (int)Math.Ceiling(dblPageCount);
+		List<ListItem> pages = new List<ListItem>();
+		if (pageCount > 0)
+		{
+ 		pages.Add(new ListItem("First", "1", currentPage > 1));
+		for (int i = 1; i <= pageCount; i++)
+		{
+		 pages.Add(new ListItem(i.ToString(), i.ToString(), i != currentPage));
+		}
+		pages.Add(new ListItem("Last", pageCount.ToString(), currentPage < pageCount));
+		}
+		rptPager.DataSource = pages;
+		rptPager.DataBind();
+		}
+ 	public static void LoadHR_OverTimeRuleSetUpPage(System.Web.UI.WebControls.GridView gv, System.Web.UI.WebControls.Repeater rptPager, int pageIndex, DropDownList ddlPageSize)
+	{
+		int recordCount=0;
+		int PageSize =  int.Parse(ddlPageSize.SelectedValue);
+		SqlHR_OverTimeRuleSetUpProvider sqlHR_OverTimeRuleSetUpProvider = new SqlHR_OverTimeRuleSetUpProvider();
+		DataSet ds =  sqlHR_OverTimeRuleSetUpProvider.GetHR_OverTimeRuleSetUpPageWise(pageIndex, PageSize, out recordCount);
+		gv.DataSource = ds;
+		gv.DataBind();
+		 hR_OverTimeRuleSetUpsPaggination(rptPager,recordCount, pageIndex, PageSize);
+	}
+    public static DataSet  GetDropDownListAllHR_OverTimeRuleSetUp()
+    {
+       DataSet hR_OverTimeRuleSetUps = new DataSet();
+        SqlHR_OverTimeRuleSetUpProvider sqlHR_OverTimeRuleSetUpProvider = new SqlHR_OverTimeRuleSetUpProvider();
+        hR_OverTimeRuleSetUps = sqlHR_OverTimeRuleSetUpProvider.GetDropDownLisAllHR_OverTimeRuleSetUp();
+        return hR_OverTimeRuleSetUps;
+    }
+
+
+    public static HR_OverTimeRuleSetUp GetHR_OverTimeRuleSetUpByOverTimeRuleSetUpID(int OverTimeRuleSetUpID)
+    {
+        HR_OverTimeRuleSetUp hR_OverTimeRuleSetUp = new HR_OverTimeRuleSetUp();
+        SqlHR_OverTimeRuleSetUpProvider sqlHR_OverTimeRuleSetUpProvider = new SqlHR_OverTimeRuleSetUpProvider();
+        hR_OverTimeRuleSetUp = sqlHR_OverTimeRuleSetUpProvider.GetHR_OverTimeRuleSetUpByOverTimeRuleSetUpID(OverTimeRuleSetUpID);
+        return hR_OverTimeRuleSetUp;
+    }
+
+
+    public static int InsertHR_OverTimeRuleSetUp(HR_OverTimeRuleSetUp hR_OverTimeRuleSetUp)
+    {
+        SqlHR_OverTimeRuleSetUpProvider sqlHR_OverTimeRuleSetUpProvider = new SqlHR_OverTimeRuleSetUpProvider();
+        return sqlHR_OverTimeRuleSetUpProvider.InsertHR_OverTimeRuleSetUp(hR_OverTimeRuleSetUp);
+    }
+
+
+    public static bool UpdateHR_OverTimeRuleSetUp(HR_OverTimeRuleSetUp hR_OverTimeRuleSetUp)
+    {
+        SqlHR_OverTimeRuleSetUpProvider sqlHR_OverTimeRuleSetUpProvider = new SqlHR_OverTimeRuleSetUpProvider();
+        return sqlHR_OverTimeRuleSetUpProvider.UpdateHR_OverTimeRuleSetUp(hR_OverTimeRuleSetUp);
+    }
+
+    public static bool DeleteHR_OverTimeRuleSetUp(int hR_OverTimeRuleSetUpID)
+    {
+        SqlHR_OverTimeRuleSetUpProvider sqlHR_OverTimeRuleSetUpProvider = new SqlHR_OverTimeRuleSetUpProvider();
+        return sqlHR_OverTimeRuleSetUpProvider.DeleteHR_OverTimeRuleSetUp(hR_OverTimeRuleSetUpID);
+    }
+}
+

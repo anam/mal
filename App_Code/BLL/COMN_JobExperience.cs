@@ -1,0 +1,146 @@
+using System;
+using System.Data;
+using System.Configuration;
+using System.Linq;
+
+public class COMN_JobExperience
+{
+    public COMN_JobExperience()
+    {
+    }
+
+
+    public COMN_JobExperience
+        (
+int  jobExperienceID,
+string  userID,
+string  organizationName,
+string designation,
+string  natureofWork,
+DateTime  dateStart,
+DateTime  dateEnds,
+decimal  duration,
+string  reasionForLeaving,
+string  contact,
+string  addedBy,
+DateTime  addedDate,
+string  updatedBy,
+DateTime  updatedDate
+
+        )
+
+    {
+this.JobExperienceID = jobExperienceID;
+this.UserID = userID;
+this.OrganizationName = organizationName;
+this.Designation = designation;
+this.NatureofWork = natureofWork;
+this.DateStart = dateStart;
+this.DateEnds = dateEnds;
+this.Duration = duration;
+this.ReasionForLeaving = reasionForLeaving;
+this.Contact = contact;
+this.AddedBy = addedBy;
+this.AddedDate = addedDate;
+this.UpdatedBy = updatedBy;
+this.UpdatedDate = updatedDate;
+
+    }
+
+    public int  JobExperienceID
+    {
+        get ; 
+        set  ;
+    }
+
+    public string  UserID
+    {
+        get ; 
+        set  ;
+    }
+
+    public string  OrganizationName
+    {
+        get ; 
+        set  ;
+    }
+
+    public string Designation
+    {
+        get;
+        set;
+    }
+
+    //public int  DesignationID
+    //{
+    //    get ; 
+    //    set  ;
+    //}
+
+    public string  NatureofWork
+    {
+        get ; 
+        set  ;
+    }
+
+    public DateTime  DateStart
+    {
+        get ; 
+        set  ;
+    }
+
+    public DateTime  DateEnds
+    {
+        get ; 
+        set  ;
+    }
+
+    public decimal  Duration
+    {
+        get ; 
+        set  ;
+    }
+
+    public string  ReasionForLeaving
+    {
+        get ; 
+        set  ;
+    }
+
+    public string  Contact
+    {
+        get ; 
+        set  ;
+    }
+
+    public string  AddedBy
+    {
+        get ; 
+        set  ;
+    }
+
+    public DateTime  AddedDate
+    {
+        get ; 
+        set  ;
+    }
+
+    public string  UpdatedBy
+    {
+        get ; 
+        set  ;
+    }
+
+    public DateTime  UpdatedDate
+    {
+        get ; 
+        set  ;
+
+    }
+    public string StudentName
+    {
+        get;
+        set;
+    }
+}
+

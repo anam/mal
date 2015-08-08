@@ -1,0 +1,113 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Configuration;
+using System.Linq;
+using System.Web.UI.WebControls;
+using System.Xml.Linq;
+
+public class HR_OverTimeManager
+{
+	public HR_OverTimeManager()
+	{
+	}
+
+    public static DataSet  GetAllHR_OverTimes()
+    {
+       DataSet hR_OverTimes = new DataSet();
+        SqlHR_OverTimeProvider sqlHR_OverTimeProvider = new SqlHR_OverTimeProvider();
+        hR_OverTimes = sqlHR_OverTimeProvider.GetAllHR_OverTimes();
+        return hR_OverTimes;
+    }
+
+	public static void hR_OverTimesPaggination(System.Web.UI.WebControls.Repeater rptPager, int recordCount, int currentPage, int PageSize)
+		{
+		double dblPageCount = (double)((decimal)recordCount / decimal.Parse(PageSize.ToString()));
+		int pageCount = (int)Math.Ceiling(dblPageCount);
+		List<ListItem> pages = new List<ListItem>();
+		if (pageCount > 0)
+		{
+ 		pages.Add(new ListItem("First", "1", currentPage > 1));
+		for (int i = 1; i <= pageCount; i++)
+		{
+		 pages.Add(new ListItem(i.ToString(), i.ToString(), i != currentPage));
+		}
+		pages.Add(new ListItem("Last", pageCount.ToString(), currentPage < pageCount));
+		}
+		rptPager.DataSource = pages;
+		rptPager.DataBind();
+		}
+ 	public static void LoadHR_OverTimePage(System.Web.UI.WebControls.GridView gv, System.Web.UI.WebControls.Repeater rptPager, int pageIndex, DropDownList ddlPageSize)
+	{
+		int recordCount=0;
+		int PageSize =  int.Parse(ddlPageSize.SelectedValue);
+		SqlHR_OverTimeProvider sqlHR_OverTimeProvider = new SqlHR_OverTimeProvider();
+		DataSet ds =  sqlHR_OverTimeProvider.GetHR_OverTimePageWise(pageIndex, PageSize, out recordCount);
+		gv.DataSource = ds;
+		gv.DataBind();
+		 hR_OverTimesPaggination(rptPager,recordCount, pageIndex, PageSize);
+	}
+    public static DataSet  GetDropDownListAllHR_OverTime()
+    {
+       DataSet hR_OverTimes = new DataSet();
+        SqlHR_OverTimeProvider sqlHR_OverTimeProvider = new SqlHR_OverTimeProvider();
+        hR_OverTimes = sqlHR_OverTimeProvider.GetDropDownLisAllHR_OverTime();
+        return hR_OverTimes;
+    }
+
+    public static DataSet   GetAllHR_OverTimesWithRelation()
+    {
+       DataSet hR_OverTimes = new DataSet();
+        SqlHR_OverTimeProvider sqlHR_OverTimeProvider = new SqlHR_OverTimeProvider();
+        hR_OverTimes = sqlHR_OverTimeProvider.GetAllHR_OverTimes();
+        return hR_OverTimes;
+    }
+
+
+    public static HR_OverTime GetHR_EmployeeByEmployeeID(string EmployeeID)
+    {
+        HR_OverTime hR_OverTime = new HR_OverTime();
+        SqlHR_OverTimeProvider sqlHR_OverTimeProvider = new SqlHR_OverTimeProvider();
+        hR_OverTime = sqlHR_OverTimeProvider.GetHR_OverTimeByEmployeeID(EmployeeID);
+        return hR_OverTime;
+    }
+
+
+    public static HR_OverTime GetHR_OverTimePackByOverTimePackID(int OverTimePackID)
+    {
+        HR_OverTime hR_OverTime = new HR_OverTime();
+        SqlHR_OverTimeProvider sqlHR_OverTimeProvider = new SqlHR_OverTimeProvider();
+        hR_OverTime = sqlHR_OverTimeProvider.GetHR_OverTimeByOverTimePackID(OverTimePackID);
+        return hR_OverTime;
+    }
+
+
+    public static HR_OverTime GetHR_OverTimeByOverTimeID(int OverTimeID)
+    {
+        HR_OverTime hR_OverTime = new HR_OverTime();
+        SqlHR_OverTimeProvider sqlHR_OverTimeProvider = new SqlHR_OverTimeProvider();
+        hR_OverTime = sqlHR_OverTimeProvider.GetHR_OverTimeByOverTimeID(OverTimeID);
+        return hR_OverTime;
+    }
+
+
+    public static int InsertHR_OverTime(HR_OverTime hR_OverTime)
+    {
+        SqlHR_OverTimeProvider sqlHR_OverTimeProvider = new SqlHR_OverTimeProvider();
+        return sqlHR_OverTimeProvider.InsertHR_OverTime(hR_OverTime);
+    }
+
+
+    public static bool UpdateHR_OverTime(HR_OverTime hR_OverTime)
+    {
+        SqlHR_OverTimeProvider sqlHR_OverTimeProvider = new SqlHR_OverTimeProvider();
+        return sqlHR_OverTimeProvider.UpdateHR_OverTime(hR_OverTime);
+    }
+
+    public static bool DeleteHR_OverTime(int hR_OverTimeID)
+    {
+        SqlHR_OverTimeProvider sqlHR_OverTimeProvider = new SqlHR_OverTimeProvider();
+        return sqlHR_OverTimeProvider.DeleteHR_OverTime(hR_OverTimeID);
+    }
+}
+

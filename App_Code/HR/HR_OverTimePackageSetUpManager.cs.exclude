@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Configuration;
+using System.Linq;
+using System.Web.UI.WebControls;
+using System.Xml.Linq;
+
+public class HR_OverTimePackageSetUpManager
+{
+	public HR_OverTimePackageSetUpManager()
+	{
+	}
+
+    public static DataSet  GetAllHR_OverTimePackageSetUps()
+    {
+       DataSet hR_OverTimePackageSetUps = new DataSet();
+        SqlHR_OverTimePackageSetUpProvider sqlHR_OverTimePackageSetUpProvider = new SqlHR_OverTimePackageSetUpProvider();
+        hR_OverTimePackageSetUps = sqlHR_OverTimePackageSetUpProvider.GetAllHR_OverTimePackageSetUps();
+        return hR_OverTimePackageSetUps;
+    }
+
+	public static void hR_OverTimePackageSetUpsPaggination(System.Web.UI.WebControls.Repeater rptPager, int recordCount, int currentPage, int PageSize)
+		{
+		double dblPageCount = (double)((decimal)recordCount / decimal.Parse(PageSize.ToString()));
+		int pageCount = (int)Math.Ceiling(dblPageCount);
+		List<ListItem> pages = new List<ListItem>();
+		if (pageCount > 0)
+		{
+ 		pages.Add(new ListItem("First", "1", currentPage > 1));
+		for (int i = 1; i <= pageCount; i++)
+		{
+		 pages.Add(new ListItem(i.ToString(), i.ToString(), i != currentPage));
+		}
+		pages.Add(new ListItem("Last", pageCount.ToString(), currentPage < pageCount));
+		}
+		rptPager.DataSource = pages;
+		rptPager.DataBind();
+		}
+ 	public static void LoadHR_OverTimePackageSetUpPage(System.Web.UI.WebControls.GridView gv, System.Web.UI.WebControls.Repeater rptPager, int pageIndex, DropDownList ddlPageSize)
+	{
+		int recordCount=0;
+		int PageSize =  int.Parse(ddlPageSize.SelectedValue);
+		SqlHR_OverTimePackageSetUpProvider sqlHR_OverTimePackageSetUpProvider = new SqlHR_OverTimePackageSetUpProvider();
+		DataSet ds =  sqlHR_OverTimePackageSetUpProvider.GetHR_OverTimePackageSetUpPageWise(pageIndex, PageSize, out recordCount);
+		gv.DataSource = ds;
+		gv.DataBind();
+		 hR_OverTimePackageSetUpsPaggination(rptPager,recordCount, pageIndex, PageSize);
+	}
+    public static DataSet  GetDropDownListAllHR_OverTimePackageSetUp()
+    {
+       DataSet hR_OverTimePackageSetUps = new DataSet();
+        SqlHR_OverTimePackageSetUpProvider sqlHR_OverTimePackageSetUpProvider = new SqlHR_OverTimePackageSetUpProvider();
+        hR_OverTimePackageSetUps = sqlHR_OverTimePackageSetUpProvider.GetDropDownLisAllHR_OverTimePackageSetUp();
+        return hR_OverTimePackageSetUps;
+    }
+
+
+    public static HR_OverTimePackageSetUp GetHR_OverTimePackageSetUpByOverTimePackageSetUpID(int OverTimePackageSetUpID)
+    {
+        HR_OverTimePackageSetUp hR_OverTimePackageSetUp = new HR_OverTimePackageSetUp();
+        SqlHR_OverTimePackageSetUpProvider sqlHR_OverTimePackageSetUpProvider = new SqlHR_OverTimePackageSetUpProvider();
+        hR_OverTimePackageSetUp = sqlHR_OverTimePackageSetUpProvider.GetHR_OverTimePackageSetUpByOverTimePackageSetUpID(OverTimePackageSetUpID);
+        return hR_OverTimePackageSetUp;
+    }
+
+
+    public static int InsertHR_OverTimePackageSetUp(HR_OverTimePackageSetUp hR_OverTimePackageSetUp)
+    {
+        SqlHR_OverTimePackageSetUpProvider sqlHR_OverTimePackageSetUpProvider = new SqlHR_OverTimePackageSetUpProvider();
+        return sqlHR_OverTimePackageSetUpProvider.InsertHR_OverTimePackageSetUp(hR_OverTimePackageSetUp);
+    }
+
+
+    public static bool UpdateHR_OverTimePackageSetUp(HR_OverTimePackageSetUp hR_OverTimePackageSetUp)
+    {
+        SqlHR_OverTimePackageSetUpProvider sqlHR_OverTimePackageSetUpProvider = new SqlHR_OverTimePackageSetUpProvider();
+        return sqlHR_OverTimePackageSetUpProvider.UpdateHR_OverTimePackageSetUp(hR_OverTimePackageSetUp);
+    }
+
+    public static bool DeleteHR_OverTimePackageSetUp(int hR_OverTimePackageSetUpID)
+    {
+        SqlHR_OverTimePackageSetUpProvider sqlHR_OverTimePackageSetUpProvider = new SqlHR_OverTimePackageSetUpProvider();
+        return sqlHR_OverTimePackageSetUpProvider.DeleteHR_OverTimePackageSetUp(hR_OverTimePackageSetUpID);
+    }
+}
+

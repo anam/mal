@@ -1,0 +1,87 @@
+using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Configuration;
+using System.Linq;
+using System.Web.UI.WebControls;
+using System.Xml.Linq;
+
+public class HR_NationalityManager
+{
+	public HR_NationalityManager()
+	{
+	}
+
+    public static DataSet  GetAllHR_Nationalities()
+    {
+       DataSet hR_Nationalities = new DataSet();
+        SqlHR_NationalityProvider sqlHR_NationalityProvider = new SqlHR_NationalityProvider();
+        hR_Nationalities = sqlHR_NationalityProvider.GetAllHR_Nationalities();
+        return hR_Nationalities;
+    }
+
+	public static void hR_NationalitiesPaggination(System.Web.UI.WebControls.Repeater rptPager, int recordCount, int currentPage, int PageSize)
+		{
+		double dblPageCount = (double)((decimal)recordCount / decimal.Parse(PageSize.ToString()));
+		int pageCount = (int)Math.Ceiling(dblPageCount);
+		List<ListItem> pages = new List<ListItem>();
+		if (pageCount > 0)
+		{
+ 		pages.Add(new ListItem("First", "1", currentPage > 1));
+		for (int i = 1; i <= pageCount; i++)
+		{
+		 pages.Add(new ListItem(i.ToString(), i.ToString(), i != currentPage));
+		}
+		pages.Add(new ListItem("Last", pageCount.ToString(), currentPage < pageCount));
+		}
+		rptPager.DataSource = pages;
+		rptPager.DataBind();
+		}
+ 	public static void LoadHR_NationalityPage(System.Web.UI.WebControls.GridView gv, System.Web.UI.WebControls.Repeater rptPager, int pageIndex, DropDownList ddlPageSize)
+	{
+		int recordCount=0;
+		int PageSize =  int.Parse(ddlPageSize.SelectedValue);
+		SqlHR_NationalityProvider sqlHR_NationalityProvider = new SqlHR_NationalityProvider();
+		DataSet ds =  sqlHR_NationalityProvider.GetHR_NationalityPageWise(pageIndex, PageSize, out recordCount);
+		gv.DataSource = ds;
+		gv.DataBind();
+		 hR_NationalitiesPaggination(rptPager,recordCount, pageIndex, PageSize);
+	}
+    public static DataSet  GetDropDownListAllHR_Nationality()
+    {
+       DataSet hR_Nationalities = new DataSet();
+        SqlHR_NationalityProvider sqlHR_NationalityProvider = new SqlHR_NationalityProvider();
+        hR_Nationalities = sqlHR_NationalityProvider.GetDropDownListAllHR_Nationality();
+        return hR_Nationalities;
+    }
+
+
+    public static HR_Nationality GetHR_NationalityByNationalityID(int NationalityID)
+    {
+        HR_Nationality hR_Nationality = new HR_Nationality();
+        SqlHR_NationalityProvider sqlHR_NationalityProvider = new SqlHR_NationalityProvider();
+        hR_Nationality = sqlHR_NationalityProvider.GetHR_NationalityByNationalityID(NationalityID);
+        return hR_Nationality;
+    }
+
+
+    public static int InsertHR_Nationality(HR_Nationality hR_Nationality)
+    {
+        SqlHR_NationalityProvider sqlHR_NationalityProvider = new SqlHR_NationalityProvider();
+        return sqlHR_NationalityProvider.InsertHR_Nationality(hR_Nationality);
+    }
+
+
+    public static bool UpdateHR_Nationality(HR_Nationality hR_Nationality)
+    {
+        SqlHR_NationalityProvider sqlHR_NationalityProvider = new SqlHR_NationalityProvider();
+        return sqlHR_NationalityProvider.UpdateHR_Nationality(hR_Nationality);
+    }
+
+    public static bool DeleteHR_Nationality(int hR_NationalityID)
+    {
+        SqlHR_NationalityProvider sqlHR_NationalityProvider = new SqlHR_NationalityProvider();
+        return sqlHR_NationalityProvider.DeleteHR_Nationality(hR_NationalityID);
+    }
+}
+
