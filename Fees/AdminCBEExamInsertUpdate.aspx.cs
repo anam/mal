@@ -278,7 +278,7 @@ INSERT INTO [STD_CBEExamAcc]
             rbList.SelectedIndex = 0;
             txtRegiNo.Text = student.RegistrationNo;
         }
-        txtInstituteName.Text = "Chartered University College";
+        txtInstituteName.Text = "Malvern International Academy";
         Session["studentCode"] = txtStudentCode.Text;
     }
 }

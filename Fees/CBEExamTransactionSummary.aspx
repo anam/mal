@@ -24,7 +24,7 @@
             </div>
             <div style="width:70%; float:left; ">
                 <h1 style="width: 90%; line-height: 0px; font-size: 15px; text-align: left; padding-left:20px; font-weight: bold;">
-                Chartered University College<span style="padding-left:50px;font-size:10px">Private &amp; Confidential</span></h1>
+                Malvern International Academy<span style="padding-left:50px;font-size:10px">Private &amp; Confidential</span></h1>
             </div>
             <br />
             <p style="text-align: justify;font-size: 10px; padding-left: 270px; ">

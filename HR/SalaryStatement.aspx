@@ -12,7 +12,7 @@
         <div style="width: 100%; overflow: hidden; margin-bottom: 8px;">
             <div style="width: 70%; margin: 0px auto; height: 85px;">
                 <p style="text-align: center; font-size: 20px">
-                    Chartered University College
+                    Malvern International Academy
                     <br />
                     Salary Statement<br />
                     <span style="text-decoration:underline">For

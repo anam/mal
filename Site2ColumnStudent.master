@@ -43,7 +43,7 @@
             <div class="headerTop">
                 <!-- Begin: headerTop -->
                 <h1 class="logo">
-                    <a style="color: #fff;" href="Default.aspx">Chartered University College</a></h1>
+                    <a style="color: #fff;" href="Default.aspx"></a></h1>
                 
                 <div class="headerRight">
                     <div class="myaccount">

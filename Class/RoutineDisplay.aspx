@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div style=" margin:0 auto; overflow:hidden; padding-bottom:15px;">
-        <h2 style="text-align:center; text-transform:uppercase; line-height:24px; font-size:20px; font-weight:normal; margin-bottom:-2px;">chartered university college</h2>
+        <h2 style="text-align:center; text-transform:uppercase; line-height:24px; font-size:20px; font-weight:normal; margin-bottom:-2px;">Malvern International Academy</h2>
         <asp:Label ID="lblSearchBy" runat="server" Text=""></asp:Label>
     </div>
     

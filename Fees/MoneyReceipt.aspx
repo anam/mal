@@ -22,7 +22,7 @@
                         Height="38px" style="text-align: right" Width="18px" />
                 </div>
                 <p style="text-align: justify; float: left; width: 70%;  line-height: 25px">
-                    <span style="font-size: 22px; font-weight: bold">Chartered University College</span><br />
+                    <span style="font-size: 22px; font-weight: bold">Malvern International Academy</span><br />
                     <br />
                     <b></b>House# 51, Road# 10/A(Near Sat Masjid Road),
                     <br />
@@ -167,7 +167,7 @@
                 </h2>
                 <ul style="list-style:none; float:left; margin:0px">
                     <li>1. All paid amount is completely non refundable. </li>
-                    <li>2. All responsibilities regarding conduct exam are reserved by British Council, Bangladesh. Chartered University College Administration would not be responsible for Changing exam dates, time even venue.</li>
+                    <li>2. All responsibilities regarding conduct exam are reserved by British Council, Bangladesh. Malvern International Academy Administration would not be responsible for Changing exam dates, time even venue.</li>
                     <li>3. British Council may change exam date even 1 day prior to the exam. So candidates must get prepared well.</li>
                     <li>4. Candidates must bring their ACCA registration card, calculator & other belongings.</li>
                 </ul>
@@ -196,7 +196,7 @@
                         Height="38px" style="text-align: right" Width="18px" />
                 </div>
                 <p style="text-align: justify; float: left; width: 70%; line-height: 25px">
-                    <span style="font-size: 22px; font-weight: bold">Chartered University College</span><br />
+                    <span style="font-size: 22px; font-weight: bold">Malvern International Academy</span><br />
                     <br />
                     <b></b>House# 51, Road# 10/A(Near Sat Masjid Road),
                     <br />
@@ -335,7 +335,7 @@
                 <h2>Terms & Conditions : </h2>
                 <ul style="list-style:none; float:left; margin:0px">
                     <li>1. All paid amount is completely non refundable. </li>
-                    <li>2. All responsibilities regarding conduct exam are reserved by British Council, Bangladesh. Chartered University College Administration would not be responsible for Changing exam dates, time even venue.</li>
+                    <li>2. All responsibilities regarding conduct exam are reserved by British Council, Bangladesh. Malvern International Academy Administration would not be responsible for Changing exam dates, time even venue.</li>
                     <li>3. British Council may change exam date even 1 day prior to the exam. So candidates must get prepared well.</li>
                     <li>4. Candidates must bring their ACCA registration card, calculator & other belongings.</li>
                 </ul>

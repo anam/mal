@@ -31,7 +31,7 @@
                 <asp:Image ID="image" runat="server" ImageUrl="~/Accounting/LOGO/Logo_cuc.png" />
             </div>
             <h1 style="width: 100%; line-height: 24px; font-size: 50px; text-align: center; font-weight: bold;">
-                Chartered University College</h1>
+                Malvern International Academy</h1>
             <p style="text-align: justify; padding-left: 170px;">
                 <b>Address:</b>House # 51,Road # 10/A(Near Sat Masjid Road), Dhanmondi,Dhaka-1209,
                 Bangladesh<br />

@@ -44,13 +44,13 @@
                             <div class="myaccount">
                                 <span class="accSymbol"></span>
                                 <asp:LoginName ID="memberLoginName" runat="server" FormatString="  {0}" Font-Size="13px"
-                                    Font-Bold="true" ForeColor="#8AB507" />
+                                    Font-Bold="true" ForeColor="#000" />
                             </div>
                             <div class="post">
                                 <span style="float: right; padding-left: 10px; padding-right: 10px; padding-top: 10px;
                                     text-transform: uppercase;">&nbsp;
                                     <asp:LoginStatus ID="memberLoginStatus" runat="server" LogoutText="Log out" LogoutAction="Redirect"
-                                        Font-Size="13px" Font-Bold="true" ForeColor="#FD5400" LogoutPageUrl="~/Default.aspx" />
+                                        Font-Size="13px" Font-Bold="true" ForeColor="#000" LogoutPageUrl="~/Default.aspx" />
                                 </span>
                             </div>
                         </LoggedInTemplate>

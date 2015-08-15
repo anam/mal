@@ -87,7 +87,7 @@ public partial class HR_Attendence : System.Web.UI.Page
 
         List<Attendence> attendencesTimeDuration = new List<Attendence>();
         string date = "";
-        lblReprtHeader.Text = "<h1 align='center'>Chartered University College</h1>";
+        lblReprtHeader.Text = "<h1 align='center'>Malvern International Academy</h1>";
         if (txtDate.Text != date)
         {
             date = " (InOutTime >= '" + DateTime.Parse(txtDate.Text).ToString("yyyy-MM-dd") + " 00:00:00' and InOutTime <= '" + DateTime.Parse(txtDate.Text).ToString("yyyy-MM-dd") + " 23:59:00')";

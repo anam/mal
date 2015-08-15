@@ -42,7 +42,7 @@
             <div class="headerTop">
                 <!-- Begin: headerTop -->
                 <h1 class="logo">
-                    <a style="color: #fff;" href="../Default.aspx">Chartered University College</a></h1>
+                    <a style="color: #fff;" href="../Default.aspx"></a></h1>
                 <%--<a href="#">company name</a></h1>--%>
                 <div class="headerRight">
                     <asp:LoginView ID="loginView" runat="server">
@@ -50,13 +50,13 @@
                             <div class="myaccount">
                                 <span class="accSymbol"></span>
                                 <asp:LoginName ID="memberLoginName" runat="server" FormatString="  {0}" Font-Size="13px"
-                                        Font-Bold="true" ForeColor="#8AB507" />
+                                        Font-Bold="true" ForeColor="#000" />
                             </div>
                             <div class="post">
                                 <span style="float: right; padding-left: 10px; padding-right: 10px; padding-top: 10px;
                                     text-transform: uppercase;">&nbsp;                                    
                                     <asp:LoginStatus ID="memberLoginStatus" runat="server" LogoutText="Log out" LogoutAction="Redirect"
-                                        Font-Size="13px" Font-Bold="true" ForeColor="#FD5400" LogoutPageUrl="~/LoginPage.aspx" />
+                                        Font-Size="13px" Font-Bold="true" ForeColor="#000" LogoutPageUrl="~/LoginPage.aspx" />
                                 </span>
                             </div>
                         </LoggedInTemplate>

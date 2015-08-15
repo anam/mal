@@ -72,7 +72,7 @@
         </div>
         <div style="width: 50%; float: left; margin-left: 15px; padding-top:30px">
             <h1 style="text-align: left; color:#fff;">
-                Chartered University College</h1>
+                Malvern International Academy</h1>
         </div>
     </div>
     <!-- End: header -->

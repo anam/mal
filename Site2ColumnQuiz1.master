@@ -42,7 +42,7 @@
             <div class="headerTop">
                 <!-- Begin: headerTop -->
                 <h1 class="logo">
-                    <a style="color: #fff;" href="../Default.aspx">Chartered University College</a></h1>
+                    <a style="color: #fff;" href="../Default.aspx">Malvern International Academy</a></h1>
                 <%--<a href="#">company name</a></h1>--%>
                 <div class="headerRight">
                     <asp:LoginView ID="loginView" runat="server">

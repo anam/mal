@@ -46,7 +46,7 @@ Founder Chairman";
             txtP2_1.Text = "Your office time will be ";
             txtP2_2.Text = "Time will be depended and changed as per organizations regulations. The employee will abide by the general rules and regulations of the organization which may be changed by the organization time to time.";
             txtP3.Text = "The employee shall not make any financial commitment on behalf of the organization and/are engages in any dealing, which may involve the organization financially unless specifically authorized by the organization.";
-            txtP4.Text = "Chartered University College reserves the right to terminate employee any time during provisional period. If employee wants to leave the job, he has to inform Chartered University College before one (1) month but he cannot leave the job within Twelve (12) months. Chartered University College also inform before one month if termination is made.";
+            txtP4.Text = "Malvern International Academy reserves the right to terminate employee any time during provisional period. If employee wants to leave the job, he has to inform Malvern International Academy before one (1) month but he cannot leave the job within Twelve (12) months. Malvern International Academy also inform before one month if termination is made.";
             txtP5.Text ="The employee accepts the employment under the conditions mentioned above and other terms and conditions written in the personnel policy of the organization.";
             txtP6.Text = "I hope that you will be joined in proper time.";
 
@@ -88,7 +88,7 @@ Founder Chairman";
 
                     if (dsEmployeeInfo.Tables[0].Rows[0]["GenderID"].ToString() == "F")
                     {
-                        txtP4.Text = "Chartered University College reserves the right to terminate employee any time during provisional period. If employee wants to leave the job, she has to inform Chartered University College before one (1) month but she cannot leave the job within Twelve (12) months. Chartered University College also inform before one month if termination is made.";
+                        txtP4.Text = "Malvern International Academy reserves the right to terminate employee any time during provisional period. If employee wants to leave the job, she has to inform Malvern International Academy before one (1) month but she cannot leave the job within Twelve (12) months. Malvern International Academy also inform before one month if termination is made.";
                     }
                 }
                 catch (Exception ex)
