@@ -37,11 +37,11 @@
             </div>
             <br />
             <p style="text-align: justify;font-size: 10px; padding-left: 270px; ">
-                <b>Address:</b>House # 51,Road # 10/A(Near Sat Masjid Road), Dhanmondi,Dhaka-1209,
+                <b>Address:</b>50000 Kuala Lumpur, Malaysia
                 Bangladesh<br />
-                <b>Campas-2:</b>House # 352/B (Old) 21/B(New),Road # 27 (Old) 16 (New) Dhanmondi,Dhaka-1209<br />
-                <b>Phone:</b> +88 028151564,8141601,<b>Mob:</b> +88 01720553272-73,74,75,76,77,78
-                <b>Web:</b>www.cucedu.com</p>
+                
+                <b>Phone:</b> (603) – 2032 3001
+                <b>Web:</b>www.malverninternational.edu.my</p>
             <h4 style="width: 100%; line-height: 24px; font-size: 20px; text-align: center;margin:0px;">
                Daily Transaction Report</h4>
             

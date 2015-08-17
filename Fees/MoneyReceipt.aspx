@@ -22,11 +22,12 @@
                         Height="38px" style="text-align: right" Width="18px" />
                 </div>
                 <p style="text-align: justify; float: left; width: 70%;  line-height: 25px">
-                    <span style="font-size: 22px; font-weight: bold">Malvern International Academy</span><br />
-                    <br />
-                    <b></b>House# 51, Road# 10/A(Near Sat Masjid Road),
-                    <br />
-                    Dhanmondi R/A, Dhaka-1209, Bangladesh<br />
+                    <p style="text-align: justify; padding-left: 170px;">
+            <b>Address:</b>50000 Kuala Lumpur, Malaysia
+            Bangladesh<br />
+            
+            <b>Phone:</b> (603) – 2032 3001
+            <b>Web:</b>www.malverninternational.edu.my</p>
                 </p>
             </div>
             <div style="float: left; width: 25%; height: 120px; margin-right: 10px; ">
